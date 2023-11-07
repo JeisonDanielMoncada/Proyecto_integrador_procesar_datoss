@@ -15,15 +15,13 @@ promedio_edad = np.mean(edad)
 df = pd.DataFrame(data)
 
 df_dead = df[df["is_dead"] == 1]
-df_live = df[df["is_dead"] == 0]
+df_alive = df[df["is_dead"] == 0]
 
 mean_age_dead = df_dead["age"].mean()
-mean_age_alive = df_live["age"].mean()
+mean_age_alive = df_alive["age"].mean()
 
-print(f"El promedio de edad de las personas que muerieron es {mean_age_dead:.2f} años.")
-print(f"El promedio de edad de las personas que sobrevivieron es {mean_age_alive:.2f} años.")
-
+#  imprimimos el tipo de dato de cada columna y evaluamos si el tipo de dato de este esta correcto y podemos operar con el.
 print(df.dtypes)
 
-df_smokers = df.groupby("sex")["smoking"].sum()
+df_smokers = df.groupby("is_male")["is_smoker"].sum()
 print(df_smokers)
