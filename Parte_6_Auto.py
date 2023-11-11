@@ -1,8 +1,11 @@
-﻿import sys
-import requests
+﻿import requests
 import csv
+import sys
 
-url = sys.argv[0]
+print('url',sys.argv[1])
+
+url = sys.argv[1]
+
 def descargar_datos(url):
   respuesta = requests.get(url)
   nombre_archivo = url.split("/")[-1]

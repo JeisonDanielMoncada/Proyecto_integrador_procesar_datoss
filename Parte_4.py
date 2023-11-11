@@ -1,7 +1,10 @@
 import requests
 import csv
+import sys
 
-url = 'https://huggingface.co/datasets/mstz/heart_failure/raw/main/heart_failure_clinical_records_dataset.csv'
+print('url',sys.argv[1])
+
+url = sys.argv[1]
 
 def descargar_datos(url):
   respuesta = requests.get(url)
